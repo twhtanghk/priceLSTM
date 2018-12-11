@@ -6,5 +6,6 @@ ADD . $APP
 WORKDIR $APP
 
 RUN apt update \
-&&  apt install python-tk \
+&&  apt install -y python-tk \
+&&  rm -rf /var/lib/apt/lists/* \
 &&  pip install -r requirements.txt
